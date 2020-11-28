@@ -11,9 +11,9 @@ def get_fibonacci_last_digit_naive(a):
     f[1] = 1
 
     for i in range(2, a + 1):
-        f[i] = f[i - 1] + f[i - 2]
+        f[i] = (f[i - 1] + f[i - 2]) % 10
 
-    return f[a] % 10
+    return f[a]
 
 
 if __name__ == '__main__':
