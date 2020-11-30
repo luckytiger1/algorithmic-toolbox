@@ -11,7 +11,7 @@ def binary_search(a, x):
 
 def b_search(a, low, high, key):
     if high < low:
-        return  -1
+        return -1
 
     mid = math.floor(low + (high - low) / 2)
 
@@ -21,6 +21,19 @@ def b_search(a, low, high, key):
         return b_search(a, low, mid - 1, key)
     else:
         return b_search(a, mid + 1, high, key)
+
+
+def b_search_iterative(a, low, high, key):
+    while low <= high:
+        mid = math.floor(low + (high - low) / 2)
+
+        if a[mid] == key:
+            return mid
+        elif key < a[mid]:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return -1
 
 
 if __name__ == '__main__':
