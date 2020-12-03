@@ -31,7 +31,8 @@ def get_majority_element(arr, left, right):
 if __name__ == '__main__':
     input = sys.stdin.read()
     n, *a = list(map(int, input.split()))
-    totalCount = sum(1 for i in range(n-1) if a[i] == get_majority_element(a, 0, n))
+    majority_elem = get_majority_element(a, 0, n)
+    totalCount = sum(1 for i in range(n) if a[i] == majority_elem)
     if totalCount > n // 2:
         print(1)
     else:
