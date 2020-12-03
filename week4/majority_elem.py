@@ -28,6 +28,17 @@ def get_majority_element(arr, left, right):
     return majority_element(0, right - 1)
 
 
+# Boyer-Moore Voting Algorithm (linear time, constant space)
+def majority_2(a):
+    count = 0
+    currentMajor = None
+    for i in a:
+        if count == 0:
+            currentMajor = i
+        count += (1 if currentMajor == i else -1)
+    return currentMajor
+
+
 if __name__ == '__main__':
     input = sys.stdin.read()
     n, *a = list(map(int, input.split()))
